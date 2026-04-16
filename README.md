@@ -48,6 +48,17 @@ The dataset includes customer demographics, contract information, internet servi
 * Most churned customers leave within the first year
 * Competitor-related reasons account for the largest share of lost revenue
 
+## Dashboard Pages 
+### Executive Summary
+![Executive Summary](images/executive_summary.png)
+
+### Top Churn Drivers
+![Top Churn Drivers](images/top_churn_drivers.png)
+
+### Revenue at Risk
+![Revenue at Risk](images/revenue_at_risk.png)
+
+
 ## Business Recommendations 
 * Encourage customers to switch to annual contracts
 * Improve customer onboarding during the first 12 months
@@ -58,6 +69,7 @@ The dataset includes customer demographics, contract information, internet servi
 
 ## Author
 Juan DeVolder
+
 Aspiring Data Analyst and Data Engineer
 
 
