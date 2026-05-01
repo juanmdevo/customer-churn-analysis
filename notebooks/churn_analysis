@@ -1,1 +1,93 @@
+import pandas as pd
 
+df = pd.read_csv('telco.csv')
+
+print(df.head())
+print(df.info())
+print(df.columns)
+
+print(df['Churn Label'].value_counts())
+print(df['Churn Label'].value_counts(normalize=True) * 100)
+
+print(df.groupby('Contract')['Churn Label'].value_counts(normalize=True))
+
+print(df.groupby('Internet Type')['Churn Label'].value_counts(normalize=True))
+
+print(df.groupby('Payment Method')['Churn Label'].value_counts(normalize=True))
+
+print(df.groupby('Premium Tech Support')['Churn Label'].value_counts(normalize=True))
+
+print(df.groupby('Satisfaction Score')['Churn Label'].value_counts(normalize=True))
+
+print(df.groupby('Tenure in Months')['Churn Label'].value_counts(normalize=True))
+
+import matplotlib.pyplot as plt
+
+contract_churn = pd.crosstab(df['Contract'], df['Churn Label'], normalize='index') * 100
+
+contract_churn['Yes'].plot(kind='bar')
+
+plt.title('Churn Rate by Contract Type')
+plt.ylabel('Churn Rate (%)')
+plt.xlabel('Contract Type')
+plt.show()
+
+internet_churn = pd.crosstab(df['Internet Type'], df['Churn Label'], normalize='index') * 100
+
+internet_churn['Yes'].plot(kind='bar')
+
+plt.title('Churn Rate by Internet Type')
+plt.ylabel('Churn Rate (%)')
+plt.xlabel('Internet Type')
+plt.show()
+
+payment_churn = pd.crosstab(df['Payment Method'], df['Churn Label'], normalize='index') * 100
+
+payment_churn['Yes'].plot(kind='bar')
+
+plt.title('Churn Rate by Payment Method')
+plt.ylabel('Churn Rate (%)')
+plt.xlabel('Payment Method')
+plt.show()
+
+tech_support_churn = pd.crosstab(df['Premium Tech Support'], df['Churn Label'], normalize='index') * 100
+
+tech_support_churn['Yes'].plot(kind='bar')
+
+plt.title('Churn Rate by Premium Tech Support')
+plt.ylabel('Churn Rate (%)')
+plt.xlabel('Premium Tech Support')
+plt.show()
+
+satisfaction_churn = pd.crosstab(df['Satisfaction Score'], df['Churn Label'], normalize='index') * 100
+
+satisfaction_churn['Yes'].plot(kind='bar')
+
+plt.title('Churn Rate by Satisfaction Score')
+plt.ylabel('Churn Rate (%)')
+plt.xlabel('Satisfaction Score')
+plt.show()
+
+print("Total Revenue:", df['Total Revenue'].sum())
+print("Revenue Lost from Churn:", df[df['Churn Label'] == 'Yes']['Total Revenue'].sum())
+print("Average Monthly Charge:", df['Monthly Charge'].mean())
+print("Average CLTV:", df['CLTV'].mean())
+print("Average Tenure:", df['Tenure in Months'].mean())
+
+churned_customers = df[df['Churn Label'] == 'Yes']
+
+print(churned_customers['Contract'].value_counts(normalize=True) * 100)
+print(churned_customers['Internet Type'].value_counts(normalize=True) * 100)
+print(churned_customers['Payment Method'].value_counts(normalize=True) * 100)
+print(churned_customers['Premium Tech Support'].value_counts(normalize=True) * 100)
+
+print(churned_customers['Satisfaction Score'].value_counts(normalize=True) * 100)
+print(churned_customers['Tenure in Months'].describe())
+
+churned_customers = df[df['Churn Label'] == 'Yes']
+
+print(churned_customers['Monthly Charge'].sum())
+print(churned_customers['Total Revenue'].sum())
+
+print(churned_customers['Churn Category'].value_counts(normalize=True) * 100)
+print(churned_customers['Churn Reason'].value_counts().head(10))
