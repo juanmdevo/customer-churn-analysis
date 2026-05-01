@@ -50,13 +50,13 @@ The dataset includes customer demographics, contract information, internet servi
 
 ## Dashboard Pages 
 ### Executive Summary
-![Executive Summary](images/executive_summary.png)
+![Executive Summary](https://github.com/juanmdevo/customer-churn-analysis/blob/main/dashboard/executive_summary.png)
 
 ### Top Churn Drivers
-![Top Churn Drivers](images/top_churn_drivers.png)
+![Top Churn Drivers](https://github.com/juanmdevo/customer-churn-analysis/blob/main/dashboard/top_churn_drivers.png)
 
 ### Revenue at Risk
-![Revenue at Risk](images/revenue_at_risk.png)
+![Revenue at Risk](https://github.com/juanmdevo/customer-churn-analysis/blob/main/dashboard/revenue_at_risk.png)
 
 
 ## Business Recommendations 
