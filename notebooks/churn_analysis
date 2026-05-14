@@ -1,3 +1,30 @@
+# ============================================================
+# Customer Churn Analysis
+# ============================================================
+# Project: Customer Churn Prediction + Executive Dashboard
+# Author: Juan DeVolder
+#
+# Description:
+ This script performs an exploratory analysis of customer churn
+behavior using a telecom customer dataset. The goal is to identify
+patterns and business drivers associated with customer churn, such as
+contract type, internet service, payment method, tech support,
+satisfaction score, and customer tenure.
+#
+The analysis supports the development of an executive Power BI
+dashboard focused on churn risk, customer retention opportunities,
+and business recommendations.
+#
+# Tools Used:
+- Python
+- Pandas
+- Matplotlib
+- Power BI
+#
+# Dataset:
+# Telecom customer churn dataset from Kaggle
+# ============================================================
+
 import pandas as pd
 
 df = pd.read_csv('telco.csv')
@@ -91,3 +118,27 @@ print(churned_customers['Total Revenue'].sum())
 
 print(churned_customers['Churn Category'].value_counts(normalize=True) * 100)
 print(churned_customers['Churn Reason'].value_counts().head(10))
+
+# ============================================================
+# End of Analysis
+# ============================================================
+# Key Business Questions Explored:
+- Which customer groups have the highest churn rate?
+- How does contract type affect churn behavior?
+- Are customers with certain internet services more likely to churn?
+- Does premium tech support reduce churn risk?
+- How does customer satisfaction relate to churn?
+- At what tenure stage are customers most likely to leave?
+#
+# Main Insights:
+- Month-to-month customers showed the highest churn risk.
+- Fiber optic customers were more likely to churn than DSL or cable users.
+- Customers without premium tech support were significantly more likely to churn.
+- Lower satisfaction scores were strongly associated with churn.
+- Many churned customers left within the first year.
+#
+# Business Value:
+These findings can help the company identify high-risk customer segments,
+improve retention strategies, and prioritize customer support initiatives.
+The cleaned analysis was used to support an executive dashboard in Power BI.
+# ============================================================
